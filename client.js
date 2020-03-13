@@ -1,1 +1,3 @@
-$(document).ready(init);
+console.log("Whattuppp");
+
+// $(document).ready(init);
