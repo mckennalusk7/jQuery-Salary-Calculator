@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+}
+
+header {
+  background-color: rgb(195, 201, 206);
+  color: whitesmoke;
+  padding: 8px;
+  text-align: center;
+  margin-bottom: 17px;
+  box-shadow: 0 11px 11px rgb(0, 0, 0, 0.6);
+}
+
+h1,
+h2 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: rgb(15, 42, 89);
+  color: whitesmoke;
+  text-align: left;
+}
+
+th,
+td {
+  border: 3px solid black;
+  padding: 6px;
+}
+
+.boldness {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 1.4rem;
+  text-align: right;
+}
+
+input {
+  padding: 6px 10px;
+  margin: 8px 0;
+  border-radius: 4px;
+}
+
+button {
+  background-color: whitesmoke;
+  padding: 7px;
+  border-radius: 4px;
+  float: right;
+  font-size: 12px;
+  margin: 2px 2px;
+  cursor: pointer;
+  border: 2px solid black;
+}
+
+.alnCenter {
+  text-align: center;
+}
