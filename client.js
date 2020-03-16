@@ -18,19 +18,18 @@ function deleteEmployee(event) {
 }
 
 function submitEmployee(event) {
-  console.log("submit:", event);
   event.preventDefault();
-  console.log("employee added!");
 
   const submitEmployee = {
-    employeeFirstName: $(".js-input-firstName").val(),
-    employeeLastName: $(".js-input-lastName").val(),
-    employeeID: $(".js-input-ID").val(),
-    employeeTitle: $(".js-input-Title").val(),
-    employeeAnnualSalary: parseFloat($(".js-input-annualSalary").val())
+    employeeFirstName: $("#js-input-firstName").val(),
+    employeeLastName: $("#js-input-lastName").val(),
+    employeeID: $("#js-input-ID").val(),
+    employeeTitle: $("#js-input-Title").val(),
+    employeeAnnualSalary: parseFloat($("#js-input-annualSalary").val())
   };
+  console.log("employee added!:", submitEmployee);
+}
   employee.push(employeeName);
-  console.log("EMPLOYEES:", employee);
   render();
 }
 
