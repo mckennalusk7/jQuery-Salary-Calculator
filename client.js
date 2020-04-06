@@ -1,8 +1,10 @@
 console.log("Whattuppp");
 
+const employee = [];
+
 $(document).ready(init);
 function init() {
-  $("js-total-salary").on("submit", submitEmployee);
+  $(".js-form-employee").on("submit", submitEmployee);
   $(".js-table-body").on("click", ".js-btn-delete", deleteEmployee);
 }
 
@@ -23,13 +25,17 @@ function submitEmployee(event) {
   const submitEmployee = {
     employeeFirstName: $("#js-input-firstName").val(),
     employeeLastName: $("#js-input-lastName").val(),
-    employeeID: $("#js-input-ID").val(),
-    employeeTitle: $("#js-input-Title").val(),
-    employeeAnnualSalary: parseFloat($("#js-input-annualSalary").val())
+    employeeID: $("#js-input-id").val(),
+    employeeTitle: $("#js-input-title").val(),
+    employeeAnnualSalary: parseFloat($("#js-input-annualSalary").val()),
   };
+  employee.push(submitEmployee);
+  $("#js-input-firstName").val("");
+  $("#js-input-lastName").val("");
+  $("#js-input-id").val("");
+  $("#js-input-title").val("");
+  $("#js-input-annualSalary").val("");
   console.log("employee added!:", submitEmployee);
-}
-  employee.push(employeeName);
   render();
 }
 
@@ -38,10 +44,9 @@ function render() {
   let totalSalary = 0;
 
   for (let i = 0; i < employee.length; i++) {
-    const employeeInput = salary[i];
+    let employeeInput = employee[i];
     // find total salary
-    totalSalary +=
-      employeeInput.employeeAnnualSalary * employeeInput.totalSalary;
+    totalSalary += employeeInput.employeeAnnualSalary;
 
     $(".js-table-body").append(`
 <tr>
@@ -50,9 +55,14 @@ function render() {
   <td>${employeeInput.employeeID}</td>
   <td>${employeeInput.employeeTitle}</td>
   <td>${employeeInput.employeeAnnualSalary}</td>
-  <td><button class= ".js-btn-delete" data-index="${i}">Delete</button></td>
+  <td><button class="js-btn-delete" data-index="${i}">Delete</button></td>
 </tr>
 `);
   }
-  $("js-total-salary").text(`$${totalSalary}`);
+
+  //  divide annual by 12, to get monthly
+  totalSalary /= 12;
+  totalSalary = totalSalary.toFixed(2);
+
+  $(".js-total-salary").text(`$${totalSalary}`);
 }
